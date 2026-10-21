@@ -73,6 +73,15 @@ jobs:
           curl --fail --silent http://127.0.0.1:8080/health
           curl --fail --silent http://127.0.0.1:8080/ > /dev/null
           curl --fail --silent http://127.0.0.1:8080/openapi.json > /dev/null
+      - name: Live TWSE integration
+        id: live_twse
+        continue-on-error: true
+        timeout-minutes: 2
+        run: python test_app.py --live
+      - name: Record live data verification result
+        if: always()
+        run: |
+          printf 'Live TWSE integration outcome: %s\n' '${{ steps.live_twse.outcome }}' >> "$GITHUB_STEP_SUMMARY"
       - name: Container logs and cleanup
         if: always()
         run: |

@@ -67,6 +67,8 @@ variable "public_access" {
 
 locals {
   services = toset([
+    "serviceusage.googleapis.com",
+    "cloudresourcemanager.googleapis.com",
     "run.googleapis.com",
     "artifactregistry.googleapis.com",
     "iam.googleapis.com",
