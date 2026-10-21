@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="CI/CD 與部署架構">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7d9273"/></marker></defs>
+<rect width="1200" height="720" rx="16" fill="#f6f7f9"/>
+<g font-family="Segoe UI, Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+<text x="45" y="50" font-size="12" font-weight="700" fill="#899581" text-anchor="start">MARKET BRIEF / 股日</text>
+<text x="45" y="92" font-size="28" font-weight="700" fill="#25312d" text-anchor="start">CI/CD 與部署架構</text>
+<text x="45" y="121" font-size="13" font-weight="400" fill="#8a9499" text-anchor="start">PR 先驗證；main 使用短期 OIDC 身分發布不可覆寫的 commit image。</text>
+<rect x="45" y="195" width="235" height="145" rx="12" fill="#fff" stroke="#dfe5df"/>
+<text x="63" y="220" font-size="10" font-weight="700" fill="#8fa27d" text-anchor="start">01 / CHANGE</text>
+<text x="63" y="247" font-size="17" font-weight="650" fill="#334336" text-anchor="start">功能分支 / PR</text>
+<text x="63" y="274" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">GitHub Repository</text>
+<text x="63" y="296" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">提交程式、測試與 IaC</text>
+<rect x="365" y="195" width="265" height="145" rx="12" fill="#fff" stroke="#dfe5df"/>
+<text x="383" y="220" font-size="10" font-weight="700" fill="#8fa27d" text-anchor="start">02 / VERIFY</text>
+<text x="383" y="247" font-size="17" font-weight="650" fill="#334336" text-anchor="start">GitHub Actions CI</text>
+<text x="383" y="274" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">pytest · Docker smoke test</text>
+<text x="383" y="296" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">Terraform fmt / validate</text>
+<rect x="720" y="195" width="265" height="145" rx="12" fill="#fff" stroke="#dfe5df"/>
+<text x="738" y="220" font-size="10" font-weight="700" fill="#8fa27d" text-anchor="start">03 / MERGE</text>
+<text x="738" y="247" font-size="17" font-weight="650" fill="#334336" text-anchor="start">Review → 合併 main</text>
+<text x="738" y="274" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">檢查通過後發布</text>
+<text x="738" y="296" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">未設定雲端時跳過部署</text>
+<polyline points="280,268 365,268" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<polyline points="630,268 720,268" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<rect x="45" y="445" width="260" height="155" rx="12" fill="#25362b" stroke="#25362b"/>
+<text x="63" y="470" font-size="10" font-weight="700" fill="#b5c49e" text-anchor="start">04 / AUTHENTICATE</text>
+<text x="63" y="497" font-size="17" font-weight="650" fill="#eef5e7" text-anchor="start">WIF 短期部署身分</text>
+<text x="63" y="524" font-size="12" font-weight="400" fill="#bbcab2" text-anchor="start">GitHub OIDC → Google IAM</text>
+<text x="63" y="546" font-size="12" font-weight="400" fill="#bbcab2" text-anchor="start">比對 repository / owner / main</text>
+<rect x="395" y="445" width="260" height="155" rx="12" fill="#fff" stroke="#dfe5df"/>
+<text x="413" y="470" font-size="10" font-weight="700" fill="#8fa27d" text-anchor="start">05 / PACKAGE</text>
+<text x="413" y="497" font-size="17" font-weight="650" fill="#334336" text-anchor="start">Artifact Registry</text>
+<text x="413" y="524" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">Build + Push Docker image</text>
+<text x="413" y="546" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">不可覆寫的 commit tag</text>
+<rect x="745" y="445" width="350" height="155" rx="12" fill="#fff" stroke="#dfe5df"/>
+<text x="763" y="470" font-size="10" font-weight="700" fill="#8fa27d" text-anchor="start">06 / DEPLOY &amp; CHECK</text>
+<text x="763" y="497" font-size="17" font-weight="650" fill="#334336" text-anchor="start">Google Cloud Run</text>
+<text x="763" y="524" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">更新 image → 新 revision</text>
+<text x="763" y="546" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">檢查 /health 與 OpenAPI</text>
+<polyline points="985,268 1120,268 1120,389 175,389 175,445" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<text x="624" y="380" font-size="11" font-weight="400" fill="#7b8d71" text-anchor="middle">DEPLOY_ENABLED = true</text>
+<polyline points="305,520 395,520" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<polyline points="655,520 745,520" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<text x="45" y="654" font-size="12" font-weight="400" fill="#89967e" text-anchor="start">Terraform 管理資源與 IAM；CI 管理後續 image 版本。部署需要已啟用 Billing 的 GCP 專案。</text>
+<text x="45" y="695" font-size="11" font-weight="400" fill="#9ba49f" text-anchor="start">Pull Request 不取得部署身分；GitHub 不保存長期有效的 service account JSON 私鑰。</text>
+</g></svg>

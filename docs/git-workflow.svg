@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-label="多人協作 GitHub Flow">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7d9273"/></marker></defs>
+<rect width="1200" height="470" rx="16" fill="#f6f7f9"/>
+<g font-family="Segoe UI, Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+<text x="45" y="50" font-size="12" font-weight="700" fill="#899581" text-anchor="start">MARKET BRIEF / 股日</text>
+<text x="45" y="92" font-size="28" font-weight="700" fill="#25312d" text-anchor="start">多人協作 GitHub Flow</text>
+<text x="45" y="121" font-size="13" font-weight="400" fill="#8a9499" text-anchor="start">每個功能獨立分支，透過 Pull Request、CI 與 Review 合併到 main。</text>
+<rect x="35" y="210" width="160" height="150" rx="12" fill="#fff" stroke="#dfe5df"/>
+<text x="53" y="235" font-size="10" font-weight="700" fill="#8fa27d" text-anchor="start">01</text>
+<text x="53" y="262" font-size="17" font-weight="650" fill="#334336" text-anchor="start">同步 main</text>
+<text x="53" y="289" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">pull --ff-only</text>
+<text x="53" y="311" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">確認最新版本</text>
+<polyline points="195,285 230,285" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<rect x="230" y="210" width="160" height="150" rx="12" fill="#fff" stroke="#dfe5df"/>
+<text x="248" y="235" font-size="10" font-weight="700" fill="#8fa27d" text-anchor="start">02</text>
+<text x="248" y="262" font-size="17" font-weight="650" fill="#334336" text-anchor="start">功能分支</text>
+<text x="248" y="289" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">feature/…</text>
+<text x="248" y="311" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">小範圍變更</text>
+<polyline points="390,285 425,285" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<rect x="425" y="210" width="160" height="150" rx="12" fill="#fff" stroke="#dfe5df"/>
+<text x="443" y="235" font-size="10" font-weight="700" fill="#8fa27d" text-anchor="start">03</text>
+<text x="443" y="262" font-size="17" font-weight="650" fill="#334336" text-anchor="start">Commit / Push</text>
+<text x="443" y="289" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">程式與測試</text>
+<text x="443" y="311" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">推送遠端分支</text>
+<polyline points="585,285 620,285" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<rect x="620" y="210" width="160" height="150" rx="12" fill="#fff" stroke="#dfe5df"/>
+<text x="638" y="235" font-size="10" font-weight="700" fill="#8fa27d" text-anchor="start">04</text>
+<text x="638" y="262" font-size="17" font-weight="650" fill="#334336" text-anchor="start">Pull Request</text>
+<text x="638" y="289" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">說明行為與驗證</text>
+<text x="638" y="311" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">執行 CI</text>
+<polyline points="780,285 815,285" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<rect x="815" y="210" width="160" height="150" rx="12" fill="#fff" stroke="#dfe5df"/>
+<text x="833" y="235" font-size="10" font-weight="700" fill="#8fa27d" text-anchor="start">05</text>
+<text x="833" y="262" font-size="17" font-weight="650" fill="#334336" text-anchor="start">Code Review</text>
+<text x="833" y="289" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">修正回饋</text>
+<text x="833" y="311" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">檢查通過</text>
+<polyline points="975,285 1010,285" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<rect x="1010" y="210" width="160" height="150" rx="12" fill="#25362b" stroke="#25362b"/>
+<text x="1028" y="235" font-size="10" font-weight="700" fill="#b5c49e" text-anchor="start">06</text>
+<text x="1028" y="262" font-size="17" font-weight="650" fill="#eef5e7" text-anchor="start">合併與部署</text>
+<text x="1028" y="289" font-size="12" font-weight="400" fill="#bbcab2" text-anchor="start">Squash merge</text>
+<text x="1028" y="311" font-size="12" font-weight="400" fill="#bbcab2" text-anchor="start">main 自動發布</text>
+<text x="45" y="410" font-size="13" font-weight="400" fill="#87967c" text-anchor="start">建議 main 分支保護：CI 必須通過、至少一位 Reviewer、禁止直接推送。</text>
+<text x="45" y="445" font-size="11" font-weight="400" fill="#9ba49f" text-anchor="start">此圖為協作設計；實際參與者、Review 與部署證據應以 GitHub 紀錄為準。</text>
+</g></svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="系統運行架構">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7d9273"/></marker></defs>
+<rect width="1200" height="720" rx="16" fill="#f6f7f9"/>
+<g font-family="Segoe UI, Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+<text x="45" y="50" font-size="12" font-weight="700" fill="#899581" text-anchor="start">MARKET BRIEF / 股日</text>
+<text x="45" y="92" font-size="28" font-weight="700" fill="#25312d" text-anchor="start">系統運行架構</text>
+<text x="45" y="121" font-size="13" font-weight="400" fill="#8a9499" text-anchor="start">Python FastAPI + 原生前端，共用一個 Docker 容器；部署於 Google Cloud Run。</text>
+<rect x="305" y="165" width="555" height="415" rx="12" fill="#eef3e9" stroke="#cbd8bd" stroke-dasharray="6 5"/>
+<text x="329" y="198" font-size="13" font-weight="650" fill="#5d714d" text-anchor="start">GOOGLE CLOUD RUN · asia-east1</text>
+<rect x="329" y="225" width="507" height="267" rx="12" fill="#f9fbf6" stroke="#dce5d3"/>
+<text x="349" y="254" font-size="10" font-weight="650" fill="#9aa68e" text-anchor="start">DOCKER CONTAINER · 0.0.0.0:$PORT</text>
+<rect x="40" y="285" width="190" height="150" rx="12" fill="#fff" stroke="#dfe5df"/>
+<text x="58" y="310" font-size="10" font-weight="700" fill="#8fa27d" text-anchor="start">CLIENT</text>
+<text x="58" y="337" font-size="17" font-weight="650" fill="#334336" text-anchor="start">使用者瀏覽器</text>
+<text x="58" y="364" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">公司名稱／代號搜尋</text>
+<text x="58" y="386" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">行情、歷史走勢、關注</text>
+<rect x="350" y="290" width="178" height="130" rx="12" fill="#fff" stroke="#dfe5df"/>
+<text x="368" y="315" font-size="10" font-weight="700" fill="#8fa27d" text-anchor="start">PRESENTATION</text>
+<text x="368" y="342" font-size="17" font-weight="650" fill="#334336" text-anchor="start">原生前端</text>
+<text x="368" y="369" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">HTML / CSS / JavaScript</text>
+<text x="368" y="391" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">同源靜態檔案</text>
+<rect x="608" y="290" width="208" height="130" rx="12" fill="#25362b" stroke="#25362b"/>
+<text x="626" y="315" font-size="10" font-weight="700" fill="#b5c49e" text-anchor="start">APPLICATION</text>
+<text x="626" y="342" font-size="17" font-weight="650" fill="#eef5e7" text-anchor="start">FastAPI + HTTPX</text>
+<text x="626" y="369" font-size="12" font-weight="400" fill="#bbcab2" text-anchor="start">驗證、轉換、錯誤處理</text>
+<text x="626" y="391" font-size="12" font-weight="400" fill="#bbcab2" text-anchor="start">連線池與逾時</text>
+<rect x="970" y="285" width="190" height="150" rx="12" fill="#fff" stroke="#dfe5df"/>
+<text x="988" y="310" font-size="10" font-weight="700" fill="#8fa27d" text-anchor="start">PUBLIC DATA</text>
+<text x="988" y="337" font-size="17" font-weight="650" fill="#334336" text-anchor="start">證交所公開 API</text>
+<text x="988" y="364" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">STOCK_DAY_ALL</text>
+<text x="988" y="386" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start">STOCK_DAY（月度）</text>
+<polyline points="230,351 350,351" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<text x="290" y="338" font-size="11" font-weight="400" fill="#7b8d71" text-anchor="middle">HTTPS</text>
+<polyline points="528,351 608,351" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<text x="567" y="338" font-size="11" font-weight="400" fill="#7b8d71" text-anchor="middle">/api</text>
+<polyline points="816,351 970,351" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<text x="895" y="338" font-size="11" font-weight="400" fill="#7b8d71" text-anchor="middle">HTTPS / JSON</text>
+<rect x="608" y="441" width="208" height="36" rx="6" fill="#f0f4ea" stroke="#dce5d3"/>
+<text x="712" y="464" font-size="12" font-weight="400" fill="#748765" text-anchor="middle">有界記憶體快取</text>
+<polyline points="712,420 712,441" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<text x="331" y="525" font-size="13" font-weight="400" fill="#798c69" text-anchor="start">自動 HTTPS · 0–2 個執行個體 · 無持久資料庫</text>
+<text x="331" y="553" font-size="11" font-weight="400" fill="#98a58c" text-anchor="start">快取在重啟後清空；執行個體之間不共享狀態。</text>
+<rect x="405" y="620" width="355" height="57" rx="12" fill="#fff" stroke="#dfe5df"/>
+<text x="423" y="653" font-size="17" font-weight="650" fill="#334336" text-anchor="start">Cloud Logging</text>
+<text x="423" y="680" font-size="12" font-weight="400" fill="#8d9891" text-anchor="start"></text>
+<polyline points="582,580 582,620" fill="none" stroke="#7d9273" stroke-width="1.7" marker-end="url(#arrow)"/>
+<text x="675" y="606" font-size="11" font-weight="400" fill="#7b8d71" text-anchor="middle">stdout JSON</text>
+<text x="45" y="695" font-size="11" font-weight="400" fill="#9ba49f" text-anchor="start">日行情，非盤中即時報價。交易日期與來源異常狀態皆由 API 明確回傳。</text>
+</g></svg>
