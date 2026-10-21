@@ -3,8 +3,9 @@ import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
 import {Window} from "happy-dom";
 
-const html = await readFile(new URL("../app/static/index.html", import.meta.url), "utf8");
-const source = await readFile(new URL("../app/static/script.js", import.meta.url), "utf8");
+const html = await readFile(new URL("./index.html", import.meta.url), "utf8");
+const source = html.match(/<script>([\s\S]*?)<\/script>/)[1];
+const documentHTML = html.replace(/<script>[\s\S]*?<\/script>/, "");
 const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const quote = {symbol: "2330", name: "台積電", trade_date: "2026-10-20", open: 100, high: 112, low: 98, close: 110, change: 10, change_percent: 10, volume: 1000000, turnover: 105000000, transactions: 2000};
 const other = {...quote, symbol: "2317", name: "鴻海", close: 95, change: -5, change_percent: -5};
@@ -37,7 +38,7 @@ function setup(options = {}) {
     } else body = {data: url.pathname.endsWith("2317") ? other : quote, meta};
     return {ok: true, json: async () => body};
   };
-  window.document.write(html);
+  window.document.write(documentHTML);
   window.eval(source);
   return {window, document: window.document, calls};
 }

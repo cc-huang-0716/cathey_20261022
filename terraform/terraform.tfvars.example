@@ -1,8 +1,0 @@
-project_id           = "YOUR_GCP_PROJECT_ID"
-region               = "asia-east1"
-service_name         = "market-brief"
-repository_id        = "market-brief"
-container_image      = "asia-east1-docker.pkg.dev/YOUR_GCP_PROJECT_ID/market-brief/market-brief:bootstrap-1"
-github_repository_id = "1428349958"
-github_owner_id      = "173608276"
-public_access        = true

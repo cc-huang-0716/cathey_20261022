@@ -1,3 +1,70 @@
+terraform {
+  required_version = ">= 1.6, < 2.0"
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = ">= 6.0, < 8.0"
+    }
+  }
+}
+
+provider "google" {
+  project = var.project_id
+  region  = var.region
+}
+
+
+variable "project_id" {
+  description = "Existing, billing-enabled Google Cloud project ID."
+  type        = string
+}
+
+variable "region" {
+  description = "Cloud Run and Artifact Registry region."
+  type        = string
+  default     = "asia-east1"
+}
+
+variable "service_name" {
+  type    = string
+  default = "market-brief"
+}
+
+variable "repository_id" {
+  type    = string
+  default = "market-brief"
+}
+
+variable "container_image" {
+  description = "Bootstrap application image; use a commit tag or digest, not latest. CI manages later releases."
+  type        = string
+}
+
+variable "github_repository_id" {
+  description = "Numeric GitHub repository ID; prevents repository name reuse attacks."
+  type        = string
+  validation {
+    condition     = can(regex("^[0-9]+$", var.github_repository_id))
+    error_message = "github_repository_id must be a numeric GitHub repository ID."
+  }
+}
+
+variable "github_owner_id" {
+  description = "Numeric GitHub user/organization ID."
+  type        = string
+  validation {
+    condition     = can(regex("^[0-9]+$", var.github_owner_id))
+    error_message = "github_owner_id must be a numeric GitHub owner ID."
+  }
+}
+
+variable "public_access" {
+  description = "Allow unauthenticated visitors; intended for the public interview demo."
+  type        = bool
+  default     = true
+}
+
+
 locals {
   services = toset([
     "run.googleapis.com",
@@ -95,8 +162,6 @@ resource "google_cloud_run_v2_service" "app" {
     }
   }
 
-  # Terraform owns infrastructure; GitHub Actions owns subsequent image releases.
-  # This prevents a later infrastructure apply from rolling back a CI release.
   lifecycle {
     ignore_changes = [template[0].containers[0].image, client, client_version]
   }
@@ -156,4 +221,33 @@ resource "google_service_account_iam_member" "github_identity" {
   service_account_id = google_service_account.deployer.name
   role               = "roles/iam.workloadIdentityUser"
   member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.github.name}/attribute.repository_id/${var.github_repository_id}"
+}
+
+
+output "service_url" {
+  value = google_cloud_run_v2_service.app.uri
+}
+
+output "artifact_registry_prefix" {
+  value = "${var.region}-docker.pkg.dev/${var.project_id}/${var.repository_id}"
+}
+
+output "workload_identity_provider" {
+  value = google_iam_workload_identity_pool_provider.github.name
+}
+
+output "deploy_service_account" {
+  value = google_service_account.deployer.email
+}
+
+output "github_actions_variables" {
+  value = {
+    GCP_PROJECT_ID                 = var.project_id
+    GCP_REGION                     = var.region
+    GCP_AR_REPOSITORY              = var.repository_id
+    CLOUD_RUN_SERVICE              = var.service_name
+    GCP_WORKLOAD_IDENTITY_PROVIDER = google_iam_workload_identity_pool_provider.github.name
+    GCP_DEPLOY_SERVICE_ACCOUNT     = google_service_account.deployer.email
+    DEPLOY_ENABLED                 = "true"
+  }
 }

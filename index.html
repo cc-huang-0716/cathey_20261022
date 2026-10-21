@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="搜尋台灣上市公司與 ETF，查看最新收盤行情、歷史走勢及市場成交概況。">
+  <meta name="theme-color" content="#f6f7f9">
+  <title>股日 Market Brief｜台股每日行情</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2218%22%20fill%3D%22%231d2929%22%2F%3E%3Cpath%20d%3D%22M16%2045V32m16%2013V22m16%2023V12%22%20stroke%3D%22%23d4e8a2%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M12%2053h40%22%20stroke%3D%22%23d4e8a2%22%20stroke-width%3D%223%22%2F%3E%3C%2Fsvg%3E%0A" type="image/svg+xml">
+  <style>
+@charset "UTF-8";
+:root{--bg:#f6f7f9;--paper:#fff;--ink:#222b30;--muted:#7b858f;--line:#e9edf0;--accent:#ba673b;--navy:#1d2929;--lime:#d4e8a2;--up:#cc5353;--up-soft:#fff1f0;--down:#24896c;--down-soft:#eaf7f1;--sidebar:222px;font-family:Inter,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif;font-size:14px;color:var(--ink);font-synthesis:none}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);-webkit-font-smoothing:antialiased}button,input,a{-webkit-tap-highlight-color:transparent}button,input{font:inherit}button,a{touch-action:manipulation}button{cursor:pointer}button{color:inherit}a{color:inherit;text-decoration:none}button:disabled{cursor:wait;opacity:.55}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #ba673b66;outline-offset:3px}svg{display:block}button svg,.nav-item svg,.search-wrap>svg{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6}[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip-link{position:fixed;z-index:100;left:20px;top:-80px;background:var(--navy);color:white;padding:12px 20px}.skip-link:focus{top:15px}
+.sidebar{width:var(--sidebar);height:100vh;position:fixed;left:0;top:0;display:flex;flex-direction:column;padding:34px 19px 0;background:#fff;border-right:1px solid var(--line);z-index:20}.brand{display:flex;align-items:center;gap:12px;padding:0 12px;margin-bottom:54px}.brand-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--navy);color:var(--lime)}.brand-mark svg{width:28px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round}.brand strong{display:block;font-size:26px;letter-spacing:2px;font-weight:800;line-height:1.15}.brand-dot{color:var(--accent)}.brand small{display:block;font-size:8px;font-weight:700;letter-spacing:1.9px;color:var(--muted);margin-top:5px}.nav-label{font-size:10px;color:#9aa2aa;font-weight:600;letter-spacing:1.5px;margin:0 16px 15px}.nav-item{width:100%;display:flex;align-items:center;gap:12px;min-height:44px;margin-bottom:8px;padding:12px 15px;border:0;background:transparent;border-radius:7px;font-size:13px;white-space:nowrap;color:#747e87;text-align:left}.nav-item svg{width:18px;height:18px}.nav-item:hover{background:#f6f7f9;color:var(--ink)}.nav-item.active{color:#283830;background:#eef3e7;font-weight:650}.key-hint{margin-left:auto;font-size:11px;color:#b0b5b8}.nav-count{margin-left:auto;background:#e7eadd;color:#60724d;min-width:19px;padding:2px 5px;text-align:center;border-radius:4px;font-size:10px}.sidebar-note{margin:55px 10px 15px;background:#f7f8f5;padding:18px;border-radius:8px}.note-icon{font-size:24px;color:#82916b}.sidebar-note p{font-size:12px;line-height:1.9;margin:12px 0;color:#55634e}.sidebar-note strong{font-weight:650}.sidebar-note small{color:#90998b;font-size:10px;line-height:1.9}.sidebar-bottom{margin-top:auto}.sidebar-bottom>.nav-item{font-size:12px;margin-bottom:18px}.external-arrow{margin-left:auto}.source-credit{display:flex;align-items:center;gap:9px;border-top:1px solid var(--line);padding:22px 10px 25px;font-size:10px;color:#69757c}.source-credit small{display:block;font-size:9px;color:#a2abb1;margin-top:5px}.source-monogram{width:29px;height:29px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;color:#52684f}.workspace{margin-left:var(--sidebar)}.topbar{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 38px;border-bottom:1px solid var(--line);background:#fff}.breadcrumb{font-size:11px;color:#9aa3ab;display:flex;gap:14px;align-items:center}.breadcrumb strong{color:#59666f;font-weight:500}.breadcrumb span{color:#c5cbd0}.topbar-actions{display:flex;align-items:center;gap:24px}.market-pill{display:flex;align-items:center;gap:7px;font-size:10px;color:#5a6964}.market-pill i{height:6px;width:6px;background:#539373;border-radius:50%}.text-button{border:0;background:none;font-size:10px;color:#6d7780;display:flex;gap:7px;padding:8px 0}main{max-width:1510px;margin:auto;padding:37px 38px 0;outline:none}.page-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}.eyebrow{font-size:8px;letter-spacing:2px;font-weight:700;color:#969fa6;margin:0 0 13px}h1{font-size:29px;line-height:1.35;letter-spacing:.5px;font-weight:700;margin:0}h1>span{color:var(--accent)}.heading-description{font-size:11px;letter-spacing:.3px;color:#859099;margin:12px 0 0}.secondary-button{display:flex;align-items:center;justify-content:center;gap:8px;background:white;border:1px solid #dde3e7;border-radius:6px;padding:10px 13px;font-size:11px;box-shadow:0 1px 2px #18273303}.secondary-button svg{width:14px;height:14px}.secondary-button:hover{background:#fbfcfd}.search-section{margin-bottom:26px}#search-form{position:relative}.search-wrap{display:flex;align-items:center;background:#fff;border:1px solid #e1e6e9;border-radius:8px;padding:8px 9px 8px 18px;box-shadow:0 2px 5px #18273302}.search-wrap>svg{width:18px;height:18px;color:#8d989f;flex-shrink:0}.search-wrap input{background:transparent;border:0;outline:none;min-width:0;width:100%;padding:9px 13px;font-size:12px;color:var(--ink)}.search-wrap input::placeholder{color:#a4acb3}.search-wrap kbd{border:1px solid var(--line);border-radius:4px;color:#a1a9ae;padding:2px 7px;font-size:10px;margin-right:18px}.search-wrap>button{background:var(--navy);border:1px solid var(--navy);border-radius:5px;color:#eef5e7;white-space:nowrap;font-size:11px;padding:11px 17px}.search-wrap>button:hover{background:#34413b}.search-wrap>button span{margin-left:14px}.quick-search{display:flex;align-items:center;gap:10px;margin-top:13px;flex-wrap:wrap}.quick-search>span{font-size:9px;color:#9ca5ac;margin-right:3px}.quick-search button{background:transparent;border:0;padding:3px 9px;color:#69747d;font-size:10px;border-right:1px solid #dde3e7}.quick-search button:last-child{border-right:0}.quick-search button:hover{color:var(--accent)}.quick-search small{color:#aab1b7;font-size:9px;margin-left:5px}.search-results{position:absolute;top:calc(100% + 6px);z-index:30;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 12px 40px #15232115;width:100%;max-height:340px;overflow:auto;padding:6px}.search-result{width:100%;display:flex;justify-content:space-between;align-items:center;background:white;border:0;padding:12px 15px;border-radius:5px;text-align:left}.search-result:hover,.search-result:focus{background:#f3f5f1}.search-result strong{font-size:12px;font-weight:600}.search-result small{font-size:10px;color:var(--muted);margin-left:12px}.search-result>span:last-child{font-size:12px;font-variant-numeric:tabular-nums}.search-message{font-size:12px;color:var(--muted);padding:18px}.notice,.error-banner{font-size:12px;line-height:1.8;padding:12px 16px;border-radius:7px;margin-bottom:20px}.notice{background:#fff8ec;color:#916b32;border:1px solid #f1e4cb}.error-banner{background:#fff1f0;color:#a74747;border:1px solid #f0d2d0}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:24px}.summary-card{min-width:0;background:white;border:1px solid var(--line);border-radius:9px;padding:18px 20px 17px;min-height:130px}.summary-label{display:flex;align-items:center;justify-content:space-between;gap:7px;color:#79848c;font-size:10px}.small-icon{color:#a7b0b6;font-size:13px}.summary-value{font-size:26px;font-weight:600;letter-spacing:-.5px;font-variant-numeric:tabular-nums;line-height:1.4;margin:11px 0 7px;white-space:nowrap}.summary-value .unit{font-size:12px;margin-left:5px;font-weight:400;color:#8d979d}.summary-value.date-value{font-size:24px}.summary-foot{font-size:9px;line-height:1.5;color:#9aa3aa;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.market-breadth{display:flex;align-items:center;gap:12px;font-size:25px;margin-bottom:5px}.up{color:var(--up)}.down{color:var(--down)}.neutral{color:#8b949b}.slash{font-size:17px;font-weight:300;color:#d1d8dc}.breadth-bar{display:flex;height:3px;gap:2px;margin:0 0 8px;overflow:hidden;border-radius:3px}.breadth-bar span:first-child{background:#e69b98;width:40%}.breadth-bar span:nth-child(2){background:#dce1e4;width:20%}.breadth-bar span:last-child{background:#83b7a4;width:40%}.detail-grid{display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:20px;margin-bottom:24px}.panel{background:#fff;border:1px solid var(--line);border-radius:9px}.chart-panel{padding:24px 25px 16px;min-width:0}.quote-heading{display:flex;align-items:center;justify-content:space-between}.stock-identity{display:flex;align-items:center;gap:9px}.symbol-badge{font-size:10px;font-weight:650;color:#6b7874;background:#f0f3ef;border-radius:3px;padding:4px 6px;font-variant-numeric:tabular-nums}.exchange-tag{font-size:8px;color:#a0a8ae;letter-spacing:.4px}.quote-heading h2{font-size:22px;font-weight:650;letter-spacing:.4px;margin:10px 0 0}.favorite-button{display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:white;font-size:10px;color:#89929a;padding:7px 9px;border-radius:5px}.favorite-button svg{width:12px;height:12px}.favorite-button[aria-pressed=true]{background:#fcf7ee;color:#a17c38;border-color:#eee1c5}.favorite-button[aria-pressed=true] svg{fill:#d6b25f}.price-line{display:flex;align-items:baseline;gap:9px;margin-top:19px;flex-wrap:wrap}.stock-price{font-size:37px;font-weight:650;letter-spacing:-1.2px;font-variant-numeric:tabular-nums;line-height:1}.currency{font-size:10px;letter-spacing:.8px;color:#99a2a8}.price-change{font-size:11px;font-weight:500;margin-left:8px;white-space:nowrap}.price-caption{color:#9ca5ad;font-size:9px;margin-top:11px}.chart-toolbar{display:flex;align-items:center;justify-content:space-between;margin-top:27px;margin-bottom:6px}.chart-label{display:flex;align-items:center;gap:6px;font-size:10px;color:#859188}.legend-dot{height:5px;width:5px;background:#819776;border-radius:50%}.segmented-control{display:flex;padding:3px;border-radius:5px;background:#f5f6f7;gap:2px}.segmented-control button{font-size:9px;border:0;background:none;color:#9aa2a9;padding:5px 9px;border-radius:3px}.segmented-control button.selected{background:white;color:#53664b;box-shadow:0 1px 3px #172b1c0c}.chart{height:212px;position:relative;min-width:0;margin-top:7px}.chart>svg{height:100%;width:100%;overflow:visible}.chart-placeholder{height:100%;display:flex;align-items:center;justify-content:center;color:#a2aab0;font-size:11px;text-align:center;line-height:1.9;padding:20px}.chart-footer{border-top:1px solid #f1f3f4;padding-top:13px;display:flex;justify-content:space-between;gap:10px;font-size:8px;color:#a5adb3}.chart-tooltip{position:absolute;pointer-events:none;top:5px;right:12px;font-size:10px;background:var(--navy);color:white;padding:6px 10px;border-radius:4px}.chart-hit{fill:transparent}.quote-facts{padding:24px 23px}.section-title{display:flex;align-items:center;justify-content:space-between}.section-title h2{font-size:13px;margin:0;font-weight:650}.subtle-dot{height:5px;width:5px;border-radius:50%;background:#adb99b}.facts-subtitle{font-size:9px;color:#9aa3a9;margin:9px 0 17px}.quote-facts dl{margin:0}.quote-facts dl>div{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:8px}.quote-facts dt{font-size:11px;color:#839099}.quote-facts dt small{font-size:8px;margin-left:3px;color:#abb2b7}.quote-facts dd{font-size:12px;font-weight:500;font-variant-numeric:tabular-nums;margin:0}.range-section{border-top:1px solid var(--line);margin-top:14px;padding-top:17px}.range-section>div:first-child{display:flex;justify-content:space-between;align-items:center;font-size:9px;color:#919da4}.range-section strong{font-size:9px;font-weight:500;color:#76846e}.range-track{height:5px;background:linear-gradient(90deg,#e8eeeb,#b6c4a3);position:relative;margin:14px 0 7px;border-radius:5px}.range-track span{position:absolute;height:9px;width:9px;border-radius:50%;background:#70875d;border:2px solid #fff;box-shadow:0 0 0 1px #a2b391;top:-2px;left:50%;transform:translateX(-50%)}.range-labels{display:flex;justify-content:space-between;font-size:9px;color:#a5aeb4;font-variant-numeric:tabular-nums}.facts-note{display:flex;gap:8px;margin-top:20px;padding:12px 11px;background:#f7f8f6;border-radius:5px;color:#9aa393}.facts-note>span{font-size:12px;line-height:1.8}.facts-note p{font-size:9px;line-height:1.9;margin:0}.leaders-panel{overflow:hidden}.table-heading{padding:23px 24px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}.table-heading h2{font-size:15px;font-weight:650;margin:0}.table-heading p{font-size:9px;color:#9aa3aa;margin:7px 0 0}.table-tabs{display:flex;align-items:center;gap:7px}.table-tabs button{border:0;background:transparent;font-size:10px;color:#96a0a7;padding:7px 11px;border-radius:5px;white-space:nowrap}.table-tabs button.selected{background:#f0f3eb;color:#617252;font-weight:600}.table-scroll{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;font-size:9px;font-weight:500;color:#9aa4ab;background:#fafbfc;border-top:1px solid #f0f2f4;border-bottom:1px solid #f0f2f4;padding:12px 15px}th small{font-size:8px;color:#b0b8be}td{font-size:11px;padding:14px 15px;border-bottom:1px solid #f1f3f5;font-variant-numeric:tabular-nums;color:#55636b}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#fcfdfb}th:first-child,td:first-child{padding-left:24px}th:last-child,td:last-child{padding-right:24px;width:40px}.rank-col{width:45px}.rank-cell{font-size:10px;color:#b0b8be}.number{text-align:right}.company-button{display:flex;align-items:center;gap:11px;background:none;border:0;padding:0;text-align:left;min-width:120px}.company-avatar{width:29px;height:29px;border-radius:7px;display:grid;place-items:center;background:#f0f3ee;border:1px solid #e8ede5;color:#78856d;font-size:10px;flex-shrink:0}.company-button strong{font-size:11px;font-weight:600;display:block;color:#3b4a50;max-width:155px;overflow:hidden;text-overflow:ellipsis}.company-button small{font-size:9px;color:#a1aab0;display:block;margin-top:4px;letter-spacing:.5px}.company-button:hover strong{color:var(--accent)}.change-chip{display:inline-block;padding:4px 6px;min-width:63px;text-align:center;border-radius:4px;font-size:10px;font-weight:500}.change-chip.up{background:var(--up-soft)}.change-chip.down{background:var(--down-soft)}.change-chip.neutral{background:#f1f3f5}.table-star{border:0;background:transparent;color:#c8cfd3;font-size:19px;padding:2px 4px;line-height:1}.table-star[aria-pressed=true]{color:#bca15d}.table-footer{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;border-top:1px solid var(--line);font-size:8px;color:#a2abb1}.footer-separator{margin:0 8px;color:#c5ccd1}.empty-state{padding:35px 20px;text-align:center!important;color:#99a3aa;font-size:12px;line-height:1.8}.empty-state strong{display:block;color:#6f7e72;font-size:13px;margin-bottom:8px}.page-footer{display:flex;justify-content:space-between;gap:20px;padding:25px 0 28px;font-size:8px;color:#a5aeb5}.page-footer strong{color:#7b8980;font-size:10px;margin-right:8px}.page-footer a{margin-left:6px;color:#7f8b91}.page-footer a:hover{text-decoration:underline}dialog{max-width:500px;width:calc(100% - 35px);border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:0 20px 90px #12221a29;color:var(--ink)}dialog::backdrop{background:#18281f66;backdrop-filter:blur(3px)}.dialog-heading{display:flex;align-items:center;justify-content:space-between}.dialog-heading h2{font-size:19px;margin:0}.icon-button{border:0;background:#f3f5f1;width:30px;height:30px;border-radius:50%;font-size:22px;color:#78836d}dialog p{font-size:12px;color:#7d878a;line-height:2;margin:18px 0}dialog p strong{color:#53634d;font-weight:600}dialog>a{display:block;font-size:12px;color:var(--accent);margin-top:20px}.toast{position:fixed;bottom:30px;left:calc(50% + var(--sidebar)/2);transform:translateX(-50%);background:#26382b;color:#eef5e7;font-size:12px;border-radius:7px;padding:13px 22px;z-index:50;box-shadow:0 6px 20px #23312118;max-width:90vw}.refreshing svg{animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+@media(min-width:1500px){:root{--sidebar:240px}main{padding-top:42px}.summary-card{padding:21px 23px}.chart{height:240px}.detail-grid{grid-template-columns:minmax(0,1fr) 310px}.chart-panel{padding:27px 30px 19px}.quote-facts{padding:27px}.table-heading{padding:25px 28px}}
+@media(max-width:1180px){:root{--sidebar:190px}.sidebar{padding-left:12px;padding-right:12px}.brand{padding:0 8px;gap:9px}.brand strong{font-size:24px}.brand-mark{width:38px;height:38px}.topbar{padding:0 25px}main{padding:28px 25px 0}.summary-grid{gap:10px}.summary-card{padding:16px 14px}.summary-value{font-size:23px}.summary-value.date-value{font-size:21px}.summary-foot{font-size:8px}.detail-grid{grid-template-columns:minmax(0,1fr) 240px;gap:14px}.chart-panel{padding:21px 20px 16px}.quote-facts{padding:22px 18px}.stock-price{font-size:33px}.price-change{font-size:10px;margin-left:3px}.table-heading{padding:22px 20px}td,th{padding-left:11px;padding-right:11px}.company-button{gap:8px}.company-button strong{max-width:120px}.sidebar-note{margin-left:5px;margin-right:5px;padding:14px}}
+@media(max-width:950px){:root{--sidebar:72px}.sidebar{padding:25px 10px 0;align-items:center}.brand{padding:0;margin-bottom:40px}.brand>span:last-child,.nav-label,.nav-item .key-hint,.sidebar-note,.source-credit,.external-arrow{display:none}.nav-item{font-size:0;padding:15px;width:48px;position:relative;justify-content:center}.nav-item svg{width:18px;height:18px;flex-shrink:0}.nav-item .nav-count{position:absolute;top:2px;right:-1px;font-size:8px;min-width:15px;padding:2px}.sidebar-bottom{padding-bottom:15px}.topbar{height:63px}.summary-value.date-value{font-size:20px}.summary-label{font-size:9px}h1{font-size:26px}.summary-value{font-size:22px}.detail-grid{grid-template-columns:minmax(0,1fr) 240px}.table-footer{font-size:8px}.turnover-col{display:none}td.turnover-col{display:none}}
+@media(max-width:720px){.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.summary-card{min-height:115px;padding:15px 17px}.summary-value.date-value{font-size:23px}.summary-value{font-size:25px}.detail-grid{grid-template-columns:minmax(0,1fr)}.quote-facts{display:none}.chart{height:220px}.topbar-actions{gap:14px}.breadcrumb{font-size:10px;gap:10px}.table-heading p{max-width:190px;line-height:1.8}.table-tabs{gap:1px}.table-tabs button{font-size:9px;padding:7px 8px}.table-footer>span:last-child{display:none}.page-footer{flex-direction:column;gap:10px}.quick-search{gap:4px}.quick-search button{font-size:9px;padding:3px 6px}.search-wrap input{font-size:11px}.search-wrap kbd{display:none}.search-wrap>button{padding:10px 12px}.search-wrap>button span{margin-left:6px}.heading-description{font-size:10px;max-width:245px;line-height:1.8}.secondary-button{font-size:10px;padding:9px}.secondary-button span{display:none}h1{font-size:24px}.price-change{font-size:11px;margin-left:7px}}
+@media(max-width:470px){:root{--sidebar:0px}.sidebar{position:static;flex-direction:row;width:100%;height:64px;padding:12px 17px;border-right:0;border-bottom:1px solid var(--line);justify-content:space-between}.brand{margin:0}.brand>span:last-child{display:block}.brand-mark{width:32px;height:32px;border-radius:9px}.brand-mark svg{width:22px}.brand strong{font-size:21px}.brand small{display:none}.sidebar nav{display:flex;gap:4px}.nav-item{margin:0;width:36px;min-height:36px;padding:9px;border-radius:5px}.sidebar-bottom{display:none}.topbar{height:46px;padding:0 19px}.market-pill{font-size:9px}.text-button{font-size:9px}.breadcrumb{font-size:9px}main{padding:25px 17px 0}.page-heading{margin-bottom:23px}.eyebrow{font-size:7px;letter-spacing:1.5px}h1{font-size:23px}.search-wrap{padding:7px 7px 7px 12px}.search-wrap>svg{width:15px;height:15px}.search-wrap input{padding:8px;font-size:10px}.search-wrap>button{font-size:10px;padding:10px}.quick-search>span{display:none}.quick-search{margin-top:11px}.summary-grid{gap:10px;margin-bottom:17px}.summary-card{padding:14px;min-height:115px}.summary-value.date-value{font-size:21px}.summary-value{font-size:24px}.summary-foot{font-size:8px}.chart-panel{padding:21px 17px 16px}.quote-heading h2{font-size:21px}.stock-price{font-size:35px}.favorite-button{font-size:9px;padding:7px}.chart-footer{font-size:7px}.detail-grid{margin-bottom:17px}.table-heading{padding:20px 17px 16px;align-items:flex-start}.table-heading h2{font-size:13px}.table-heading p{font-size:8px;max-width:145px}.table-tabs{margin-top:0}.table-tabs button{font-size:8px;padding:6px}.rank-col,.rank-cell{display:none}th,td{padding-left:11px;padding-right:11px}th:nth-child(2),td:nth-child(2){padding-left:17px}th:last-child,td:last-child{padding-right:11px}.company-avatar{display:none}.company-button{min-width:85px}.company-button strong{max-width:90px;font-size:10px}td{font-size:10px}.change-chip{font-size:9px;min-width:54px;padding:4px}.table-footer{padding:13px 17px}.toast{left:50%}.price-caption{font-size:8px}.page-footer{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important}}
+@media(max-width:720px){.quote-facts{display:block;padding:20px}.quote-facts dl{display:grid;grid-template-columns:1fr 1fr;column-gap:28px}.quote-facts .range-section,.quote-facts .facts-note{display:none}.quote-facts .facts-subtitle{margin-bottom:9px}.quote-facts dl>div{padding:9px 0}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+  <aside class="sidebar" aria-label="主導覽">
+    <a class="brand" href="/" aria-label="股日首頁">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7 22V16M16 22V10M25 22V5"/><path d="M5 27h22"/></svg></span>
+      <span><strong>股日<span class="brand-dot">.</span></strong><small>MARKET BRIEF</small></span>
+    </a>
+    <div class="nav-label">工作空間</div>
+    <nav>
+      <button class="nav-item active" data-nav="overview" aria-current="page"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>市場總覽</button>
+      <button class="nav-item" data-nav="search"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>行情搜尋<span class="key-hint">/</span></button>
+      <button class="nav-item" data-nav="watchlist"><svg viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"/></svg>我的關注<span id="watch-count" class="nav-count">0</span></button>
+    </nav>
+    <div class="sidebar-note"><span class="note-icon">↗</span><p>把目光放在<br><strong>每一天的市場變化。</strong></p><small>從公開數據開始，<br>建立自己的市場觀察。</small></div>
+    <div class="sidebar-bottom">
+      <a class="nav-item" href="/docs" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg>API 文件<span class="external-arrow">↗</span></a>
+      <div class="source-credit"><span class="source-monogram">TW</span><div>臺灣證券交易所<small>公開資料 · 每日行情</small></div></div>
+    </div>
+  </aside>
+
+  <div class="workspace">
+    <header class="topbar">
+      <div class="breadcrumb">市場觀察 <span>/</span> <strong>台灣上市</strong></div>
+      <div class="topbar-actions"><span class="market-pill"><i></i>日行情資料</span><button id="info-button" class="text-button">資料說明 <span aria-hidden="true">↗</span></button></div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-heading">
+        <div><p class="eyebrow">YOUR DAILY MARKET PERSPECTIVE</p><h1>市場脈動，每日掌握<span>.</span></h1><p class="heading-description">查詢公司行情，讓每一次觀察都有數據可循。</p></div>
+        <button id="refresh" class="secondary-button"><svg viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 7a7 7 0 0 1 11.6-1L20 9M4 15l2.3 3A7 7 0 0 0 18 17"/></svg><span>重新整理</span></button>
+      </section>
+
+      <section class="search-section" aria-label="搜尋上市證券">
+        <form id="search-form" role="search" autocomplete="off">
+          <div class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><label class="sr-only" for="search">公司名稱或股票代號</label><input id="search" type="search" placeholder="搜尋公司名稱或股票代號，例如 台積電、2330" maxlength="40" aria-controls="search-results" aria-expanded="false"><kbd>/</kbd><button type="submit">查詢行情 <span aria-hidden="true">→</span></button></div>
+          <div id="search-results" class="search-results" hidden aria-label="搜尋結果"></div>
+        </form>
+        <div class="quick-search"><span>快速查看</span><button data-symbol="2330">台積電 <small>2330</small></button><button data-symbol="2317">鴻海 <small>2317</small></button><button data-symbol="2882">國泰金 <small>2882</small></button><button data-symbol="0050">元大台灣50 <small>0050</small></button></div>
+      </section>
+
+      <div id="notice" class="notice" role="status" hidden></div>
+      <div id="error" class="error-banner" role="alert" hidden></div>
+
+      <section class="summary-grid" aria-label="市場概況">
+        <article class="summary-card"><div class="summary-label">最新交易日<span class="small-icon">↗</span></div><div class="summary-value date-value" id="trade-date">—</div><div class="summary-foot" id="date-note">正在取得證交所資料</div></article>
+        <article class="summary-card"><div class="summary-label">上漲 / 下跌家數<span class="small-icon">↕</span></div><div class="summary-value market-breadth"><span id="advancing" class="up">—</span><span class="slash">/</span><span id="declining" class="down">—</span></div><div class="breadth-bar" aria-hidden="true"><span id="up-bar"></span><span id="flat-bar"></span><span id="down-bar"></span></div><div class="summary-foot" id="breadth-note">依最新交易日上市證券統計</div></article>
+        <article class="summary-card"><div class="summary-label">上市證券成交金額<span class="small-icon">＄</span></div><div class="summary-value" id="total-turnover">—</div><div class="summary-foot">涵蓋股票、ETF 等上市證券</div></article>
+        <article class="summary-card"><div class="summary-label">有行情的上市證券<span class="small-icon">▤</span></div><div class="summary-value" id="securities">—</div><div class="summary-foot" id="fetched-at">資料來源：TWSE OpenAPI</div></article>
+      </section>
+
+      <section class="detail-grid" aria-label="個股詳細行情">
+        <article class="panel chart-panel" aria-busy="true" id="quote-panel">
+          <div class="quote-heading"><div><div class="stock-identity"><span id="stock-symbol" class="symbol-badge">2330</span><span class="exchange-tag">TWSE 上市</span></div><h2 id="stock-name">台積電</h2></div><button id="favorite" class="favorite-button" aria-label="加入關注" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"/></svg><span>加入關注</span></button></div>
+          <div class="price-line"><span id="stock-price" class="stock-price">—</span><span class="currency">TWD</span><span id="stock-change" class="price-change">—</span></div>
+          <div class="price-caption" id="quote-date">收盤價 · 正在載入</div>
+          <div class="chart-toolbar"><div class="chart-label"><span class="legend-dot"></span>月度收盤走勢</div><div class="segmented-control" aria-label="歷史月份"><button data-month="previous">上個月</button><button class="selected" data-month="current" aria-pressed="true">本月</button></div></div>
+          <div id="chart" class="chart" role="img" aria-label="歷史收盤價走勢圖"><div class="chart-placeholder">正在載入歷史走勢…</div></div>
+          <div class="chart-footer"><span id="chart-period">—</span><span>原始收盤價 · 未經還原調整</span></div>
+        </article>
+
+        <aside class="panel quote-facts"><div class="section-title"><h2>交易快覽</h2><span class="subtle-dot"></span></div><p class="facts-subtitle" id="facts-date">最新交易日</p><dl><div><dt>開盤價</dt><dd id="fact-open">—</dd></div><div><dt>最高價</dt><dd id="fact-high">—</dd></div><div><dt>最低價</dt><dd id="fact-low">—</dd></div><div><dt>成交量 <small>股</small></dt><dd id="fact-volume">—</dd></div><div><dt>成交金額</dt><dd id="fact-turnover">—</dd></div><div><dt>成交筆數</dt><dd id="fact-transactions">—</dd></div></dl><div class="range-section"><div><span>當日價格區間</span><strong id="range-value">—</strong></div><div class="range-track"><span id="range-marker"></span></div><div class="range-labels"><span id="range-low">最低</span><span id="range-high">最高</span></div></div><div class="facts-note"><span aria-hidden="true">ⓘ</span><p>此為每日成交資訊。盤中或休市期間，顯示資料來源最近公布的交易日。</p></div></aside>
+      </section>
+
+      <section class="panel leaders-panel" id="market-table">
+        <div class="table-heading"><div><h2 id="table-title">市場焦點</h2><p id="table-description">從成交量與漲跌幅，觀察當日交易動向</p></div><div class="table-tabs" aria-label="排行方式"><button data-sort="volume" class="selected" aria-pressed="true">成交量</button><button data-sort="gainers" aria-pressed="false">漲幅</button><button data-sort="losers" aria-pressed="false">跌幅</button></div></div>
+        <div class="table-scroll"><table><thead><tr><th class="rank-col">#</th><th>證券名稱 / 代號</th><th class="number">收盤價</th><th class="number">漲跌幅</th><th class="number">成交量 <small>股</small></th><th class="number turnover-col">成交金額</th><th><span class="sr-only">關注</span></th></tr></thead><tbody id="leaders"><tr><td colspan="7" class="empty-state">正在取得市場資料…</td></tr></tbody></table></div>
+        <div class="table-footer"><span id="table-note">點選證券名稱，查看完整行情</span><span>幣別 TWD <span class="footer-separator">·</span> 紅漲綠跌</span></div>
+      </section>
+      <footer class="page-footer"><span><strong>股日.</strong> 每一天，都看見市場。</span><span>資料來源 <a href="https://openapi.twse.com.tw/" target="_blank" rel="noopener">臺灣證券交易所 ↗</a><span class="footer-separator">·</span>日行情，非即時報價</span></footer>
+    </main>
+  </div>
+
+  <dialog id="data-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><h2 id="dialog-title">關於這些數據</h2><button id="close-dialog" class="icon-button" aria-label="關閉">×</button></div><p>行情來自臺灣證券交易所公開 API，包含上市股票、ETF 等證券；不涵蓋上櫃、興櫃與海外市場。</p><p><strong>最新行情不等於即時行情。</strong>我們顯示來源實際提供的交易日期。當日尚未更新或休市時，會顯示最近交易日的資料。</p><p>收盤價與月度歷史資料來自不同端點，公布時間可能不同。歷史價格未經除權息、分割等還原調整；缺失或無成交價格顯示為「—」。漲跌幅以來源提供的漲跌價差反推參考價計算。</p><p>行情快取 5 分鐘；資料來源暫時異常時，可能顯示有明確提示的先前資料。自選清單只儲存在目前瀏覽器。</p><a href="https://openapi.twse.com.tw/" target="_blank" rel="noopener">查看官方資料來源 ↗</a></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+<script>
+"use strict";
+
+const $ = (id) => document.getElementById(id);
+const todayParts = new Intl.DateTimeFormat("en-CA", {timeZone: "Asia/Taipei", year: "numeric", month: "2-digit", day: "2-digit"}).formatToParts(new Date());
+const localDate = Object.fromEntries(todayParts.map((part) => [part.type, part.value]));
+const todayISO = `${localDate.year}-${localDate.month}-${localDate.day}`;
+const currentMonth = todayISO.slice(0, 7);
+const lastMonthDate = new Date(Date.UTC(Number(localDate.year), Number(localDate.month) - 2, 1));
+const previousMonth = `${lastMonthDate.getUTCFullYear()}-${String(lastMonthDate.getUTCMonth() + 1).padStart(2, "0")}`;
+const state = {symbol: "2330", month: currentMonth, sort: "volume", view: "overview", quotes: new Map(), market: null, selection: 0, marketRequest: 0, tableRequest: 0, searchRequest: 0, chartRequest: 0};
+let searchTimer;
+let searchController;
+let toastTimer;
+let favorites = [];
+try { const stored = JSON.parse(localStorage.getItem("market-brief-watchlist") || "[]"); if (Array.isArray(stored)) favorites = [...new Set(stored.filter((s) => typeof s === "string" && /^[0-9A-Z]{4,6}$/.test(s)))].slice(0, 20); } catch {  }
+
+function text(id, value) { $(id).textContent = value; }
+function price(value) { return value == null ? "—" : Number(value).toLocaleString("zh-TW", {minimumFractionDigits: 2, maximumFractionDigits: 2}); }
+function integer(value) { return value == null ? "—" : Number(value).toLocaleString("zh-TW"); }
+function compact(value, suffix = "") { if (value == null) return "—"; if (Math.abs(value) >= 100000000) return `${(value / 100000000).toLocaleString("zh-TW", {maximumFractionDigits: 2})} 億${suffix}`; if (Math.abs(value) >= 10000) return `${(value / 10000).toLocaleString("zh-TW", {maximumFractionDigits: 1})} 萬${suffix}`; return `${integer(value)}${suffix}`; }
+function changeClass(value) { return value == null || value === 0 ? "neutral" : value > 0 ? "up" : "down"; }
+function signed(value, percent = false) { return value == null ? "—" : `${value > 0 ? "+" : ""}${price(value)}${percent ? "%" : ""}`; }
+function formatDate(value) { return value ? value.replaceAll("-", "/") : "—"; }
+function toast(message) { text("toast", message); $("toast").hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { $("toast").hidden = true; }, 3000); }
+function showError(message) { text("error", message); $("error").hidden = false; }
+function clearError() { $("error").hidden = true; }
+
+async function api(path, signal) {
+  const response = await fetch(path, {signal, headers: {Accept: "application/json"}});
+  let payload;
+  try { payload = await response.json(); } catch { throw new Error("服務暫時無法回應，請稍後再試。"); }
+  if (!response.ok) throw new Error(payload.error?.message || "無法取得資料，請稍後再試。");
+  return payload;
+}
+
+function remember(quotes) { quotes.forEach((quote) => state.quotes.set(quote.symbol, quote)); }
+function updateFavoriteButton() {
+  const saved = favorites.includes(state.symbol);
+  $("favorite").setAttribute("aria-pressed", String(saved));
+  $("favorite").setAttribute("aria-label", saved ? "移除關注" : "加入關注");
+  $("favorite").querySelector("span").textContent = saved ? "已關注" : "加入關注";
+  text("watch-count", favorites.length);
+}
+
+function toggleFavorite(symbol) {
+  const existed = favorites.includes(symbol);
+  if (!existed && favorites.length >= 20) { toast("最多可以關注 20 檔證券。"); return; }
+  favorites = existed ? favorites.filter((code) => code !== symbol) : [...favorites, symbol];
+  try { localStorage.setItem("market-brief-watchlist", JSON.stringify(favorites)); } catch { toast("瀏覽器無法儲存清單，本次關注僅於此頁有效。"); }
+  updateFavoriteButton();
+  document.querySelectorAll("[data-favorite]").forEach((button) => { const active = favorites.includes(button.dataset.favorite); button.setAttribute("aria-pressed", String(active)); button.textContent = active ? "★" : "☆"; button.setAttribute("aria-label", `${active ? "取消關注" : "關注"} ${button.dataset.favorite}`); });
+  if (state.view === "watchlist") loadTable();
+  toast(existed ? "已從關注清單移除" : "已加入我的關注");
+}
+
+function renderQuote(quote) {
+  remember([quote]);
+  text("stock-symbol", quote.symbol); text("stock-name", quote.name); text("stock-price", price(quote.close));
+  text("stock-change", `${signed(quote.change)} (${signed(quote.change_percent, true)})`);
+  $("stock-change").className = `price-change ${changeClass(quote.change)}`;
+  text("quote-date", `收盤價 · ${formatDate(quote.trade_date)} · 非即時報價`);
+  text("facts-date", `${formatDate(quote.trade_date)} 交易資訊`);
+  for (const field of ["open", "high", "low"]) text(`fact-${field}`, price(quote[field]));
+  text("fact-volume", integer(quote.volume)); text("fact-turnover", compact(quote.turnover, "元")); text("fact-transactions", integer(quote.transactions));
+  text("range-low", price(quote.low)); text("range-high", price(quote.high));
+  const ranged = quote.low != null && quote.high != null && quote.close != null;
+  text("range-value", ranged ? `${price(quote.low)} – ${price(quote.high)}` : "無有效價格");
+  $("range-marker").hidden = !ranged;
+  if (ranged) $("range-marker").style.left = `${quote.high === quote.low ? 50 : Math.min(100, Math.max(0, (quote.close - quote.low) / (quote.high - quote.low) * 100))}%`;
+  updateFavoriteButton();
+}
+
+function chartMessage(message) { const div = document.createElement("div"); div.className = "chart-placeholder"; div.textContent = message; $("chart").replaceChildren(div); $("chart").setAttribute("aria-label", message); text("chart-period", `${state.month.replace("-", "/")} 月度行情`); }
+
+function svgNode(tag, attributes = {}, content) {
+  const node = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  Object.entries(attributes).forEach(([key, value]) => node.setAttribute(key, String(value)));
+  if (content != null) node.textContent = content;
+  return node;
+}
+
+function renderChart(points) {
+  const valid = points.filter((point) => point.close != null);
+  if (!valid.length) { chartMessage("這個月份尚無可用的成交資料，試試上個月。"); return; }
+  const width = 690, height = 218, left = 8, right = 59, top = 15, bottom = 30;
+  const w = width - left - right, h = height - top - bottom;
+  const closes = valid.map((point) => point.close);
+  const minValue = Math.min(...closes), maxValue = Math.max(...closes);
+  const spread = maxValue - minValue || Math.max(maxValue * 0.01, 1);
+  const low = Math.max(0, minValue - spread * 0.25), high = maxValue + spread * 0.25;
+  const x = (i) => valid.length === 1 ? left + w / 2 : left + i / (valid.length - 1) * w;
+  const y = (v) => top + (high - v) / (high - low) * h;
+  const svg = svgNode("svg", {viewBox: `0 0 ${width} ${height}`, "aria-hidden": "true", preserveAspectRatio: "none"});
+  const defs = svgNode("defs"); const gradient = svgNode("linearGradient", {id: "chart-gradient", x1: 0, y1: 0, x2: 0, y2: 1}); gradient.append(svgNode("stop", {offset: "0%", "stop-color": "#a9bd94", "stop-opacity": ".24"}), svgNode("stop", {offset: "100%", "stop-color": "#a9bd94", "stop-opacity": ".01"})); defs.append(gradient); svg.append(defs);
+  for (let i = 0; i <= 3; i++) { const py = top + h * i / 3; svg.append(svgNode("line", {x1: left, x2: left + w, y1: py, y2: py, stroke: "#edf0ed", "stroke-dasharray": "3 5"}), svgNode("text", {x: width - right + 12, y: py + 3, fill: "#a2aba8", "font-size": 9, "font-family": "inherit"}, price(high - (high - low) * i / 3))); }
+  const path = valid.map((point, index) => `${index ? "L" : "M"}${x(index).toFixed(1)},${y(point.close).toFixed(1)}`).join(" ");
+  if (valid.length > 1) svg.append(svgNode("path", {d: `${path} L${x(valid.length - 1)},${top + h} L${x(0)},${top + h} Z`, fill: "url(#chart-gradient)"}));
+  svg.append(svgNode("path", {d: path, fill: "none", stroke: "#859d6c", "stroke-width": 2, "stroke-linejoin": "round", "vector-effect": "non-scaling-stroke"}));
+  const indexes = [...new Set([0, Math.floor((valid.length - 1) / 3), Math.floor((valid.length - 1) * 2 / 3), valid.length - 1])];
+  indexes.forEach((index) => svg.append(svgNode("text", {x: x(index), y: height - 7, fill: "#a5ada9", "font-size": 9, "font-family": "inherit", "text-anchor": index === 0 ? "start" : index === valid.length - 1 ? "end" : "middle"}, valid[index].date.slice(5).replace("-", "/"))));
+  const cursor = svgNode("line", {x1: 0, x2: 0, y1: top, y2: top + h, stroke: "#afbb9f", "stroke-dasharray": "3 3", visibility: "hidden"});
+  const dot = svgNode("circle", {cx: x(valid.length - 1), cy: y(valid.at(-1).close), r: 3, fill: "#7e9567", stroke: "white", "stroke-width": 2});
+  svg.append(cursor, dot);
+  const tooltip = document.createElement("div"); tooltip.className = "chart-tooltip"; tooltip.hidden = true;
+  const hit = svgNode("rect", {x: left, y: top, width: w, height: h, class: "chart-hit"});
+  hit.addEventListener("pointermove", (event) => { const box = svg.getBoundingClientRect(); const position = (event.clientX - box.left) / box.width * width; const index = Math.max(0, Math.min(valid.length - 1, Math.round((position - left) / w * (valid.length - 1)))); cursor.setAttribute("x1", x(index)); cursor.setAttribute("x2", x(index)); cursor.setAttribute("visibility", "visible"); dot.setAttribute("cx", x(index)); dot.setAttribute("cy", y(valid[index].close)); tooltip.textContent = `${formatDate(valid[index].date)}　${price(valid[index].close)}`; tooltip.hidden = false; });
+  hit.addEventListener("pointerleave", () => { cursor.setAttribute("visibility", "hidden"); tooltip.hidden = true; dot.setAttribute("cx", x(valid.length - 1)); dot.setAttribute("cy", y(valid.at(-1).close)); });
+  svg.append(hit); $("chart").replaceChildren(svg, tooltip);
+  $("chart").setAttribute("aria-label", `${state.month}，${valid.length} 個交易日，首日收盤 ${price(valid[0].close)}，末日收盤 ${price(valid.at(-1).close)}，區間最低 ${price(minValue)}、最高 ${price(maxValue)}。`);
+  text("chart-period", `${formatDate(valid[0].date)} — ${formatDate(valid.at(-1).date)} · ${valid.length} 個交易日`);
+}
+
+async function loadHistory() {
+  const request = ++state.chartRequest, symbol = state.symbol, month = state.month;
+  chartMessage("正在載入歷史走勢…");
+  try {
+    const response = await api(`/api/stocks/${encodeURIComponent(symbol)}/history?month=${month}`);
+    if (request !== state.chartRequest) return;
+    renderChart(response.data);
+    if (response.meta.stale) { const warning = document.createElement("span"); warning.textContent = " · 先前資料"; $("chart-period").append(warning); }
+  } catch (error) { if (request === state.chartRequest) chartMessage(error.message); }
+}
+
+async function selectStock(symbol) {
+  const selection = ++state.selection;
+  state.symbol = symbol; closeSearch(); clearError();
+  $("quote-panel").setAttribute("aria-busy", "true");
+  text("stock-symbol", symbol); text("stock-name", "載入中…"); text("stock-price", "—"); text("stock-change", "—");
+  text("quote-date", "正在取得此證券的日行情…"); text("facts-date", "正在載入");
+  for (const field of ["open", "high", "low", "volume", "turnover", "transactions"]) text(`fact-${field}`, "—");
+  text("range-value", "—"); text("range-low", "最低"); text("range-high", "最高"); $("range-marker").hidden = true;
+  updateFavoriteButton(); loadHistory();
+  try {
+    const response = await api(`/api/stocks/${encodeURIComponent(symbol)}`);
+    if (selection !== state.selection) return;
+    renderQuote(response.data);
+    if (response.meta.stale) { text("notice", response.meta.warning); $("notice").hidden = false; }
+    document.querySelectorAll(".quick-search [data-symbol]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.symbol === symbol)));
+  } catch (error) {
+    if (selection === state.selection) { text("stock-name", "無法取得行情"); text("quote-date", "請稍後重新整理"); showError(error.message); }
+  } finally { if (selection === state.selection) $("quote-panel").setAttribute("aria-busy", "false"); }
+}
+
+function tableMessage(message) { const row = document.createElement("tr"); const cell = document.createElement("td"); cell.colSpan = 7; cell.className = "empty-state"; cell.textContent = message; row.append(cell); $("leaders").replaceChildren(row); }
+function renderTable(quotes) {
+  remember(quotes);
+  if (!quotes.length) { tableMessage(state.view === "watchlist" ? "尚未加入關注。點選行情旁的星號，建立自己的觀察清單。" : "目前沒有符合此排行的資料。"); return; }
+  const rows = quotes.map((quote, index) => {
+    const row = document.createElement("tr"); const rank = document.createElement("td"); rank.className = "rank-cell"; rank.textContent = String(index + 1).padStart(2, "0"); row.append(rank);
+    const company = document.createElement("td"); const button = document.createElement("button"); button.className = "company-button"; button.dataset.symbol = quote.symbol;
+    const avatar = document.createElement("span"); avatar.className = "company-avatar"; avatar.textContent = quote.name.slice(0, 1);
+    const identity = document.createElement("span"); const name = document.createElement("strong"); name.textContent = quote.name; const code = document.createElement("small"); code.textContent = quote.symbol; identity.append(name, code); button.append(avatar, identity); company.append(button); row.append(company);
+    const close = document.createElement("td"); close.className = "number"; close.textContent = price(quote.close); row.append(close);
+    const change = document.createElement("td"); change.className = "number"; const chip = document.createElement("span"); chip.className = `change-chip ${changeClass(quote.change_percent)}`; chip.textContent = signed(quote.change_percent, true); change.append(chip); row.append(change);
+    const volume = document.createElement("td"); volume.className = "number"; volume.textContent = integer(quote.volume); row.append(volume);
+    const turnover = document.createElement("td"); turnover.className = "number turnover-col"; turnover.textContent = compact(quote.turnover); row.append(turnover);
+    const favorite = document.createElement("td"); const star = document.createElement("button"); const active = favorites.includes(quote.symbol); star.className = "table-star"; star.dataset.favorite = quote.symbol; star.setAttribute("aria-label", `${active ? "取消關注" : "關注"} ${quote.symbol}`); star.setAttribute("aria-pressed", String(active)); star.textContent = active ? "★" : "☆"; favorite.append(star); row.append(favorite);
+    return row;
+  }); $("leaders").replaceChildren(...rows);
+}
+
+async function loadTable() {
+  const request = ++state.tableRequest;
+  const watching = state.view === "watchlist";
+  text("table-title", watching ? "我的關注" : "市場焦點");
+  text("table-description", watching ? "保留你在意的公司，持續追蹤每一天" : "從成交量與漲跌幅，觀察當日交易動向");
+  document.querySelector(".table-tabs").hidden = watching;
+  if (!watching) { if (state.market) renderTable(state.market.leaders); return; }
+  if (!favorites.length) { renderTable([]); return; }
+  tableMessage("正在更新關注清單…");
+  const results = await Promise.allSettled(favorites.map((symbol) => api(`/api/stocks/${symbol}`)));
+  if (request !== state.tableRequest) return;
+  const quotes = results.filter((result) => result.status === "fulfilled").map((result) => result.value.data);
+  const failed = results.length - quotes.length;
+  if (!quotes.length && failed) tableMessage("關注清單的行情暫時無法取得，請稍後重新整理。");
+  else renderTable(quotes);
+  if (failed) text("table-note", `${failed} 檔關注證券暫時無法取得行情，請稍後重新整理。`);
+  else text("table-note", `已關注 ${quotes.length} 檔 · 儲存於此瀏覽器`);
+}
+
+async function loadMarket() {
+  const request = ++state.marketRequest;
+  const response = await api(`/api/market?sort=${state.sort}`);
+  if (request !== state.marketRequest) return;
+  state.market = response; remember([...response.featured, ...response.leaders]);
+  const summary = response.summary;
+  text("trade-date", formatDate(summary.trade_date));
+  text("date-note", summary.trade_date === todayISO ? "今日公布的日成交行情" : "最近公布行情 · 今日資料尚未提供");
+  text("advancing", integer(summary.advancing)); text("declining", integer(summary.declining));
+  text("breadth-note", `持平 ${integer(summary.unchanged)} · 無有效漲跌資料 ${integer(summary.unavailable)}`);
+  for (const [id, value] of [["up-bar", summary.advancing], ["flat-bar", summary.unchanged], ["down-bar", summary.declining]]) $(id).style.width = `${value / (summary.advancing + summary.declining + summary.unchanged || 1) * 100}%`;
+  text("total-turnover", compact(summary.total_turnover)); text("securities", integer(summary.securities));
+  const fetched = new Intl.DateTimeFormat("zh-TW", {timeZone: "Asia/Taipei", hour: "2-digit", minute: "2-digit", hour12: false}).format(new Date(response.meta.retrieved_at));
+  text("fetched-at", `資料取得 ${fetched} · 台北時間`);
+  $("notice").hidden = !response.meta.stale;
+  if (response.meta.stale) text("notice", response.meta.warning);
+  await loadTable();
+}
+
+function closeSearch() { ++state.searchRequest; clearTimeout(searchTimer); if (searchController) searchController.abort(); $("search-results").hidden = true; $("search").setAttribute("aria-expanded", "false"); }
+function searchMessage(message) { const div = document.createElement("div"); div.className = "search-message"; div.textContent = message; $("search-results").replaceChildren(div); $("search-results").hidden = false; $("search").setAttribute("aria-expanded", "true"); }
+async function searchStocks(autoSelect = false) {
+  const query = $("search").value.trim();
+  const request = ++state.searchRequest;
+  if (searchController) searchController.abort();
+  if (!query) { closeSearch(); return; }
+  searchController = new AbortController(); searchMessage("搜尋中…");
+  try {
+    const response = await api(`/api/stocks?q=${encodeURIComponent(query)}&limit=8`, searchController.signal);
+    if (request !== state.searchRequest) return;
+    remember(response.data);
+    if (autoSelect && response.data.length === 1) { selectStock(response.data[0].symbol); $("search").value = ""; return; }
+    if (!response.data.length) { searchMessage("找不到符合的上市證券。請確認名稱或代號；目前不涵蓋上櫃及海外市場。"); return; }
+    const buttons = response.data.map((quote) => { const button = document.createElement("button"); button.type = "button"; button.className = "search-result"; button.dataset.symbol = quote.symbol; const identity = document.createElement("span"); const name = document.createElement("strong"); name.textContent = quote.name; const symbol = document.createElement("small"); symbol.textContent = quote.symbol; identity.append(name, symbol); const value = document.createElement("span"); value.textContent = price(quote.close); button.append(identity, value); return button; });
+    $("search-results").replaceChildren(...buttons); $("search-results").hidden = false; $("search").setAttribute("aria-expanded", "true");
+  } catch (error) { if (error.name !== "AbortError" && request === state.searchRequest) searchMessage(error.message); }
+}
+
+$("search").addEventListener("input", () => { clearTimeout(searchTimer); ++state.searchRequest; if (searchController) searchController.abort(); if (!$("search").value.trim()) closeSearch(); else searchTimer = setTimeout(() => searchStocks(), 250); });
+$("search-form").addEventListener("submit", (event) => { event.preventDefault(); clearTimeout(searchTimer); searchStocks(true); });
+$("search").addEventListener("keydown", (event) => { if (event.key === "ArrowDown") { event.preventDefault(); $("search-results").querySelector("button")?.focus(); } if (event.key === "Escape") closeSearch(); });
+$("search-results").addEventListener("keydown", (event) => { const buttons = [...$("search-results").querySelectorAll("button")], index = buttons.indexOf(document.activeElement); if (event.key === "ArrowDown") { event.preventDefault(); buttons[(index + 1) % buttons.length]?.focus(); } if (event.key === "ArrowUp") { event.preventDefault(); if (index <= 0) $("search").focus(); else buttons[index - 1]?.focus(); } if (event.key === "Escape") { closeSearch(); $("search").focus(); } });
+
+document.addEventListener("click", (event) => {
+  const favorite = event.target.closest("[data-favorite]"); if (favorite) { toggleFavorite(favorite.dataset.favorite); return; }
+  const symbol = event.target.closest("[data-symbol]"); if (symbol) { selectStock(symbol.dataset.symbol); $("search").value = ""; if (symbol.closest("#leaders")) $("quote-panel").scrollIntoView({behavior: "smooth", block: "start"}); return; }
+  if (!event.target.closest("#search-form")) closeSearch();
+});
+document.addEventListener("keydown", (event) => { if (event.key === "/" && !/INPUT|TEXTAREA/.test(document.activeElement.tagName) && !$("data-dialog").open) { event.preventDefault(); $("search").focus(); } });
+$("favorite").addEventListener("click", () => toggleFavorite(state.symbol));
+document.querySelectorAll("[data-month]").forEach((button) => button.addEventListener("click", () => { state.month = button.dataset.month === "current" ? currentMonth : previousMonth; document.querySelectorAll("[data-month]").forEach((tab) => { const selected = tab === button; tab.classList.toggle("selected", selected); tab.setAttribute("aria-pressed", String(selected)); }); loadHistory(); }));
+document.querySelectorAll("[data-sort]").forEach((button) => button.addEventListener("click", async () => { state.sort = button.dataset.sort; document.querySelectorAll("[data-sort]").forEach((tab) => { const selected = tab === button; tab.classList.toggle("selected", selected); tab.setAttribute("aria-pressed", String(selected)); }); tableMessage("正在取得排行…"); try { await loadMarket(); } catch (error) { showError(error.message); tableMessage("排行暫時無法載入，請稍後再試。"); } }));
+document.querySelectorAll("[data-nav]").forEach((button) => button.addEventListener("click", async () => { if (button.dataset.nav === "search") { $("search").focus(); window.scrollTo({top: 0, behavior: "smooth"}); return; } state.view = button.dataset.nav; document.querySelectorAll("[data-nav]").forEach((nav) => { nav.classList.toggle("active", nav === button); if (nav === button) nav.setAttribute("aria-current", "page"); else nav.removeAttribute("aria-current"); }); text("table-note", "點選證券名稱，查看完整行情"); await loadTable(); if (state.view === "watchlist") $("market-table").scrollIntoView({behavior: "smooth", block: "start"}); }));
+$("refresh").addEventListener("click", async () => { clearError(); $("refresh").disabled = true; $("refresh").classList.add("refreshing"); try { await loadMarket(); await selectStock(state.symbol); toast("行情已重新整理"); } catch (error) { showError(error.message); } finally { $("refresh").disabled = false; $("refresh").classList.remove("refreshing"); } });
+$("info-button").addEventListener("click", () => $("data-dialog").showModal()); $("close-dialog").addEventListener("click", () => $("data-dialog").close());
+$("data-dialog").addEventListener("click", (event) => { if (event.target === $("data-dialog")) { const bounds = $("data-dialog").getBoundingClientRect(); if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) $("data-dialog").close(); } });
+
+updateFavoriteButton();
+loadMarket().catch((error) => { showError(error.message); text("date-note", "請稍後重新整理"); tableMessage("目前無法取得市場資料。"); });
+selectStock(state.symbol);
+</script>
+</body>
+</html>

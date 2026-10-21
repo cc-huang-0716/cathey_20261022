@@ -1,4 +1,3 @@
-# Dependencies and generated Python files
 .venv/
 venv/
 env/
@@ -8,8 +7,6 @@ __pycache__/
 *.egg-info/
 build/
 dist/
-
-# Test, coverage, and tool output
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
@@ -24,12 +21,8 @@ playwright-report/
 .tools/
 .artifacts/
 *.log
-
-# Local configuration; only example templates are versioned
 .env
 .env.*
-!.env.example
-!.env.*.example
 .vscode/
 .idea/
 .DS_Store
@@ -38,8 +31,6 @@ Desktop.ini
 *.swp
 *.swo
 *~
-
-# Private keys, local cloud credentials, and registry credentials
 *.pem
 *.key
 *.p12
@@ -65,30 +56,26 @@ gcp-sa*.json
 .pypirc
 .netrc
 _netrc
-
-# Terraform state, local variable values, plans, and local overrides
 .terraform/
 *.tfstate
 *.tfstate.*
 *.tfplan
 *.tfvars
 *.tfvars.json
-!*.tfvars.example
-!*.tfvars.json.example
 .terraform.tfstate.lock.info
 override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
 crash.log
-
-# Keep dependency locks and terraform/.terraform.lock.hcl tracked.
-
-# Local presentation material and optional documentation helpers
 /docs/
 /.github/pull_request_template.md
 /scripts/generate_diagrams.py
 /scripts/package_source.py
-
-# A separate local clone is not part of this repository.
 /cathey_20261022/
+/app/
+/tests/
+/scripts/
+/terraform/
+*.md
+!/README.md

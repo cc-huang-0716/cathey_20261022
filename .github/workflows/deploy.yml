@@ -40,9 +40,9 @@ jobs:
         with:
           python-version: '3.12'
           cache: pip
-          cache-dependency-path: requirements-dev.lock
-      - name: Check tracked files against .gitignore
-        run: python scripts/check_repository.py
+          cache-dependency-path: |
+            requirements.lock
+            requirements-dev.lock
       - name: Scan Git history for credentials
         shell: bash
         run: |
@@ -57,7 +57,8 @@ jobs:
           (cd "$tool_dir" && sha256sum --check --ignore-missing checksums.txt && tar -xzf "$archive" gitleaks)
           "$tool_dir/gitleaks" git --no-banner --redact=100 --ignore-gitleaks-allow --log-opts=--all .
       - run: python -m pip install -r requirements-dev.lock
-      - run: python -m pytest -q
+      - run: python test_app.py --check
+      - run: python -m pytest -q --asyncio-mode=auto test_app.py
       - name: Build Linux container
         run: docker build --tag market-brief:ci .
       - name: Smoke test real container (without third-party dependency)
@@ -82,9 +83,6 @@ jobs:
     name: Terraform validation
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    defaults:
-      run:
-        working-directory: terraform
     steps:
       - uses: actions/checkout@v4
       - uses: hashicorp/setup-terraform@v3
@@ -126,7 +124,6 @@ jobs:
           registry="${GCP_REGION}-docker.pkg.dev"
           image="${registry}/${GCP_PROJECT_ID}/${GCP_AR_REPOSITORY}/market-brief:${GITHUB_SHA}"
           gcloud auth configure-docker "$registry" --quiet
-          # A workflow rerun reuses an already-published immutable commit tag.
           if ! gcloud artifacts docker images describe "$image" --project "$GCP_PROJECT_ID" >/dev/null 2>&1; then
             docker build --tag "$image" .
             docker push "$image"

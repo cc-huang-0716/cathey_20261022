@@ -1,10 +1,13 @@
 {
   "name": "market-brief-frontend-checks",
   "private": true,
-  "description": "Optional DOM tests; Node is not required to run the application",
   "scripts": {
-    "test:frontend": "node --test tests/frontend.test.mjs"
+    "test:frontend": "node --test test_frontend.mjs"
   },
-  "engines": { "node": ">=22" },
-  "devDependencies": { "happy-dom": "^20.0.0" }
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "happy-dom": "^20.0.0"
+  }
 }

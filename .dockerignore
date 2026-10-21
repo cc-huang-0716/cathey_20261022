@@ -1,12 +1,9 @@
-# The runtime image needs only the application and pinned runtime dependencies.
 **
 !Dockerfile
 !.dockerignore
 !requirements.lock
-!app/
-!app/**
-
-# Do not send local configuration or credentials even if placed inside app/.
+!app.py
+!index.html
 **/__pycache__/
 **/*.py[cod]
 **/.env
