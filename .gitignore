@@ -83,3 +83,12 @@ override.tf.json
 crash.log
 
 # Keep dependency locks and terraform/.terraform.lock.hcl tracked.
+
+# Local presentation material and optional documentation helpers
+/docs/
+/.github/pull_request_template.md
+/scripts/generate_diagrams.py
+/scripts/package_source.py
+
+# A separate local clone is not part of this repository.
+/cathey_20261022/
