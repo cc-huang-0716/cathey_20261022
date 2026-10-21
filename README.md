@@ -2,6 +2,8 @@
 
 台灣上市證券每日行情查詢系統。使用 **Python FastAPI + HTTPX** 串接證交所公開 API，前端為原生 **HTML / CSS / JavaScript**。前後端放在同一個 **Docker** 容器，部署目標為 **Google Cloud Run**。
 
+[![CI](https://github.com/cc-huang-0716/cathey_20261022/actions/workflows/deploy.yml/badge.svg)](https://github.com/cc-huang-0716/cathey_20261022/actions/workflows/deploy.yml)
+
 ## 快速開始
 
 ### Docker（建議）
