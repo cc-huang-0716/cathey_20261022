@@ -4,10 +4,13 @@ import subprocess
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
 
+from check_repository import main as check_repository
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
+    check_repository()
     tracked = subprocess.check_output(["git", "ls-files", "-z"], cwd=ROOT)
     paths = [Path(path.decode("utf-8")) for path in tracked.split(b"\0") if path]
     if not paths:

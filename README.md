@@ -109,6 +109,9 @@ DOM 測試確認搜尋、關注、圖表資料與非同步競態，不能取代�
 - [多人協作 Git 工作流程](docs/git-workflow.md)
 - [AI 輔助開發方式與觀察](docs/ai-development.md)
 - [實際驗證紀錄](docs/verification.md)
+- [繳交要求、單元測試與上傳檔案檢查](docs/submission-review.md)
+
+上傳前可執行 `python scripts/check_repository.py`，確認沒有將 `.gitignore` 排除的檔案強制加入版本控制。CI 另以 Gitleaks 掃描完整 Git 歷史；環境範本與依賴 lock 檔會保留，實際憑證、環境設定、Terraform state 及本機工具會排除。原始碼 ZIP 的打包程序也會先執行追蹤檔案檢查。
 
 ## 專案結構
 

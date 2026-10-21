@@ -17,6 +17,7 @@
 | Provider 鎖定 | 已取得 Windows amd64 與 Linux amd64 checksum |
 | GitHub 上傳 | 完整專案已成功上傳至指定儲存庫的 main |
 | GitHub Actions | 前端、Python／Docker、Terraform 三個檢查 job 全部成功 |
+| 上傳檔案與憑證檢查 | 原先全部 3 筆 Git 提交經 Gitleaks 8.30.1 掃描，未發現憑證；詳細結果見 submission-review.md |
 
 真實資料驗證觀察：來源最新交易日為 **2026-10-20**，回傳 **1,383** 檔上市證券；`2330` 名稱為台積電，日行情查詢成功，本月歷史端點回傳 **14** 個交易日。這些是當次測試觀察，不是固定產品資料，後續呼叫可能隨來源更新而不同。
 
